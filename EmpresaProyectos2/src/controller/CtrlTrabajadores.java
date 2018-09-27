@@ -8,6 +8,11 @@ import javax.swing.table.DefaultTableModel;
 
 import view.DiaTrabajadorNuevo;
 
+/**
+ * es el que controla todas las vista y la logica de trabajadores
+ * @author Usuario
+ *
+ */
 public class CtrlTrabajadores {
 	public static String idPrimaryKey;
 	public static String dni;
@@ -208,6 +213,13 @@ public class CtrlTrabajadores {
 		} else {
 			JOptionPane.showMessageDialog(null, "NO TIENE SELECCIONADA NINGUNA LINEA");
 		}
+	}
+	
+	/**
+	 * Aqui seleccionamos un equipo y nos muestra los trabajadores de ese equipo
+	 */
+	public static void Equipo() {
+		
 	}
 
 }

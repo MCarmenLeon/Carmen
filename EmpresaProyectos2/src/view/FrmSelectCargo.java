@@ -20,7 +20,7 @@ public class FrmSelectCargo extends JDialog{
 	
 	
 	public FrmSelectCargo() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Usuario\\eclipse-workspace\\MenuProyectoMVC\\img\\sevillafc.jpg"));
+		//setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Usuario\\eclipse-workspace\\MenuProyectoMVC\\img\\sevillafc.jpg"));
 		
 				
 		//setModal(true);
@@ -55,10 +55,7 @@ public class FrmSelectCargo extends JDialog{
 		scrollPane.setViewportView(table);
 		
 		setVisible(true);
-				
-		
-		
-		}
+	}
 	
 
 }

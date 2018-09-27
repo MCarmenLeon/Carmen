@@ -13,6 +13,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
+/**
+ * Aqui mostramos la ventana de trabajadores donde podremos dar de alta, modidicar y borrar trabajador
+ * @author Carmen
+ *
+ */
 public class FrmTrabajador extends JFrame{
 	
 	private static final long serialVersionUID = 1L;

@@ -15,6 +15,7 @@ import java.net.URL;
 
 import javax.help.HelpBroker;
 import javax.help.HelpSet;
+import javax.help.HelpSetException;
 import javax.swing.JOptionPane;
 
 /**
@@ -32,7 +33,7 @@ public class FrmPrincipal extends Frame{
 	
 	public FrmPrincipal() {
 		crearFrame();
-		cargarAyuda();
+		//cargarAyuda();
 		setVisible(true);
 	}
 
@@ -67,18 +68,26 @@ public class FrmPrincipal extends Frame{
 		MenuItem opEquipos = new MenuItem("Equipos");
 		opEquipos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//controller.CtrlEquipo.inicio();
+				controller.CtrlTrabajadores.Equipo();
 			}
 		});
 		
 		MenuItem opAyuda = new MenuItem("Ayuda");
-		opAyuda.addActionListener(new ActionListener() {
+		opEquipos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				try {
+					cargarAyuda();
+				} catch (MalformedURLException e1) {
+					
+					e1.printStackTrace();
+				} catch (HelpSetException e1) {
+					
+					e1.printStackTrace();
+				}
 			}
 		});
-				
-				
+		Menu mnuAyuda;
+	    new MenuItem("Ayuda");
 		Menu mnuBase = new Menu ("BASE");
 		mnuBase.add(opProyect);
 		mnuBase.add(opTrabajador);
@@ -88,7 +97,7 @@ public class FrmPrincipal extends Frame{
 		Menu mnuGest = new Menu ("GESTIÓN");
 		mnuGest.add(opEquipos);
 		
-		Menu mnuAyuda = new Menu ("AYUDA");
+		mnuAyuda = new Menu ("AYUDA");
 		mnuAyuda.add(opAyuda);
 		
 		MenuBar barraMenu = new MenuBar();
@@ -112,11 +121,11 @@ public class FrmPrincipal extends Frame{
 	
 	}
 	
-	private void cargarAyuda() {
+	private void cargarAyuda() throws MalformedURLException, HelpSetException {
 		
 		//carga el fichero ayuda
-		try {
-			File fichero = new File("help/help_set.hs");
+
+			File fichero = new File("help/help.hs");
 			URL hsURL;
 		
 			hsURL = fichero.toURI().toURL();
@@ -131,13 +140,8 @@ public class FrmPrincipal extends Frame{
 
 			hb.enableHelpOnButton(opAyuda, "aplicacion", helpset);
 			//hb.enableHelpKey(, "aplicacion",helpset);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
+	
 	}
-
-			
 }
 
 

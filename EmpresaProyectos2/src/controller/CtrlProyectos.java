@@ -27,8 +27,9 @@ public class CtrlProyectos {
 			e.printStackTrace();
 		}
 	}
+	
 	/**
-	 * guardamos en proyecto los datos recogidos en los textfield
+	 * @category guardamos en proyecto los datos recogidos en los textfield
 	 * @param nombre, presupuesto, fecha inicio del proyecto y fecha final del proyecto..
 	 */
 	public static void guardarProyectoNuevo(String nombre, String presupuesto, String fechaIni, String fechaFin) {
